@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Version Control Documentation</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Version Control Documentation </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Git</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gitlab</a>
+                    </li>
+                   
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- Header -->
+    <header class="bg-dark text-white p-3">
+        <div class="container">
+            <h1 class="text-center">Git Version Control Documentation</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Main Content -->
+        <div class="container mt-4">
+            <!-- Version Control Systems -->
+            <section>
+                <h2>Version Control Systems</h2>
+                <p>Version Control System Options:</p>
+                <ol>
+                    <li>GitLab</li>
+                    <li>Beanstalk</li>
+                    <li>Perforce</li>
+                    <li>BitBucket</li>
+                </ol>
+            </section>
+
+            <!-- Difference between Git and GitHub -->
+            <section>
+                <h2>Difference Between Git and GitHub</h2>
+                <p>Git is a version control system to manage code, while GitHub is a platform for hosting repositories.
+                </p>
+                <img src="images/git-github-dff.png" alt="" height="300px" width="500px" class="img-fluid">
+                <img src="images/git-github.png" alt="" height="300px" width="500px" class="img-fluid">
+            </section>
+
+            <!-- Global Git Configuration -->
+            <section>
+                <h2>Git Configuration (Global)</h2>
+                <p>Set your global configuration for Git:</p>
+                <ul>
+                    <li><code>git config --global user.name "your name"</code></li>
+                    <li><code>git config --global user.email "your email"</code></li>
+                </ul>
+                <p>View the configuration:</p>
+                <ul>
+                    <li><code>git config --list</code></li>
+                </ul>
+            </section>
+
+            <!-- Local Git Configuration -->
+            <section>
+                <h2>Git Configuration (Local)</h2>
+                <p>Set your local configuration for a specific repository:</p>
+                <ul>
+                    <li><code>git config --local user.name "your name"</code></li>
+                    <li><code>git config --local user.email "your email"</code></li>
+                </ul>
+                <p>Unset a global configuration item:</p>
+                <ul>
+                    <li><code>git config --global unset user.email "your email"</code></li>
+                </ul>
+            </section>
+
+            <!-- SSH Key -->
+            <section>
+                <h2>SSH Key (Secure Shell)</h2>
+                <p>Use the following command to view all hidden files including your SSH keys:</p>
+                <ul>
+                    <li><code>Get-ChildItem -Force F:\Ehsan\complete-git</code></li>
+                </ul>
+            </section>
+
+            <!-- Staging & Unstaging Files -->
+            <section>
+                <h2>Git Staging & Unstaging</h2>
+                <p>Common commands for staging and unstaging files:</p>
+                <ul>
+                    <li><code>git add filename</code> - Stages a specific file</li>
+                    <li><code>git add -A</code> - Stages all changed files in the directory and subdirectories</li>
+                    <li><code>git add .</code> - Stages all changed files in the directory, excluding subdirectories
+                    </li>
+                    <li><code>git add *.js</code> - Stages all <code>.js</code> files in the directory</li>
+                    <li><code>git add **/*.js</code> - Stages all <code>.js</code> files in the directory and
+                        subdirectories</li>
+                </ul>
+            </section>
+
+            <!-- Commit Changes -->
+            <section>
+                <h2>Committing Changes</h2>
+                <ul>
+                    <li>To commit staged changes to the local repository:</li>
+                    <li><code>git commit -m "message here"</code></li>
+                    <li>Message should be clear and descriptive.</li>
+                    <li>For staging and committing changes in one step:</li>
+                    <li><code>git commit -am "message here"</code></li>
+                </ul>
+                <p>To view commit history:</p>
+                <ul>
+                    <li><code>git log</code></li>
+                </ul>
+            </section>
+
+            <!-- Undoing Commits -->
+            <section>
+                <h2>Undoing Commits</h2>
+                <p>There are several ways to undo commits in Git:</p>
+                <ul>
+                    <li><code>git reset --soft HEAD^</code> - Undo the last commit but keep changes staged</li>
+                    <li><code>git reset HEAD^</code> - Undo the last commit and unstage the changes</li>
+                    <li><code>git reset --hard HEAD^</code> - Completely undo the last commit and discard changes</li>
+                </ul>
+            </section>
+            <img src="images/workflow.png" class="img-fluid" alt="">
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <div class="container">
+            <p>&copy; 2024 Git Documentation. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
