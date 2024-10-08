@@ -1,0 +1,69 @@
+
+git configuration for global
+
+______________________
+
+git config --global user.name "your name"
+
+git config --global user.email "your email"
+
+git config --list (for show config)
+
+___________________
+
+git configuration for local
+
+______________________
+
+git config --local user.name "your name"
+
+git config --local user.email "your email"
+------------------------------------------
+git config --global unset user.email "your email" (for remove item)
+
+--------------------------------------------
+
+ssh key -secure shell
+
+---------------------------------------------
+
+Get-ChildItem -Force F:\Ehsan\complete-git (all hidden file )
+
+
+------------------------
+Git staging & unstaging
+------------------------
+Git add filename
+Git add -A [A is shorthand for -all] stage all changed files in directory and subdirectories
+Git add . -> stage all changed files in the directory but not subdirectories
+Git add *.js (directory wildcard)
+Git add **/*.js (directory & subdirectory wildcard)
+Checking the differences: git diff
+commit
+
+For moving staging to local repo we can use the following command: git commit -m "message here"
+Message should be clear and understandable.
+Staging and committing directly: git commit -am 'message here'
+Git log: to see the commit history.
+
+
+-------------
+
+Uncommit :
+
+----------
+If all you want to do is undo the act of committing, leaving everything else intact, use:
+
+git reset --soft HEAD^
+
+If all you want to do is undo the act of committing, and also remove the changes from the staging area:
+
+git reset HEAD^
+
+And if you actually want to completely undo it, throwing away all uncommitted changes, resetting everything to the previous commit (as the original question asked):
+
+git reset --hard HEAD^
+
+
+
+
