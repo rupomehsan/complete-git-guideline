@@ -157,9 +157,37 @@
                 <h2>Head and Undo</h2>
                 <p>There are several ways to undo commits in Git:</p>
                 <ul>
-                    <li><code>git show idname</code></li>
+                    <li><code>git show cmidname</code></li>
+                    <li><code>git checkout cmidname</code>- switch to the individual head commit</li>
                 </ul>
-                
+
+            </section>
+            <section>
+                <h2>Git ignore</h2>
+                <p>There are several ways to undo commits in Git:</p>
+                <p>
+                    The image shows a .gitignore file with various patterns used to specify which files and directories
+                    should be ignored by Git:
+
+                    Specific files:<br>
+
+                    test.txt: Ignores the test.txt file.
+                    .env: Ignores the .env file, typically used to store environment variables.
+                    Wildcard patterns: <br>
+
+                    *.txt: Ignores all .txt files in the repository.<br>
+                    !main.txt: An exception to the rule, main.txt will not be ignored even though all .txt files are
+                    ignored.<br>
+                    Pattern with a single character wildcard:<br>
+
+                    test?.txt: Ignores files like test1.txt, test2.txt, etc., where the ? matches any single character.
+                    Directory ignoring:<br>
+
+                    temp/: Ignores the temp directory and all of its contents.F<br>
+                </p>
+
+                <img src="images/gitignore.png" class="img-fluid" alt="">
+
             </section>
 
         </div>
