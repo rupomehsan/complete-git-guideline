@@ -5,16 +5,18 @@
 - [Beginner Part](#beginner-part)
 
   - [1. Introduction to git and GitHub](#1-introduction-to-git-and-github)
+
     - [1.1 Why do we need Git?](#11-why-do-we-need-git)
     - [1.2 Git VS GitHub](#12-git-vs-github)
 
   - [2. Git environment setup and configuration](#2-git-environment-setup-and-configuration)
+
     - [2.1 Create a GitHub Account](#21-create-a-github-account)
     - [2.2 Download and install Git](#22-download-and-install-git)
     - [2.3 Git help and common commands](#23-git-help-and-common-commands)
     - [2.4 Git configuration and aliases](#24-git-configuration-and-aliases)
     - [2.5 What is SSH? How to setup SSH?](#25-what-is-ssh-how-to-setup-ssh)
-  
+
   - [3. Basic Git Concepts](#3-basic-git-concepts)
 
     - [3.1 Git repo and adding files](#31-git-repo-and-adding-files)
@@ -87,6 +89,17 @@
 - Released in April 7, 2005
 - Developed by Linus Torvalds & Junio C Hamano
 
+```html
+<h3>Version Control Systems</h3>
+<p>Version Control System Options:</p>
+<ol>
+  <li>GitLab</li>
+  <li>Beanstalk</li>
+  <li>Perforce</li>
+  <li>BitBucket</li>
+</ol>
+```
+
 ##### Github
 
 - GitHub is a hosting service where we can keep our git repositiory/folders
@@ -94,7 +107,7 @@
 - It provides Graphical User Interface (GUI)
 - Founded in 2008
 
-### [2. Git environment setup and configuration](<https://youtu.be/vj5-nkhTRbo>)
+### [2. Git environment setup and configuration](https://youtu.be/vj5-nkhTRbo)
 
 #### 2.1 Create a GitHub Account
 
@@ -112,6 +125,7 @@
 ##### Windows Command Prompt / Windows PowerShell / Mac Terminal (Bash/Zsh)
 
 - directoy/folder
+
   - dir/ls/ls – List directory contents.
 
   - cd – Change directory.
@@ -131,8 +145,10 @@
     rm -r directory
 
 - File
+
   - copy/New-Item/touch- Create file. Example: copy nul filename.txt / New-Item -ItemType File -Name "filename.txt" / touch filename.txt
-  - echo Your content here > filename.txt / "Your content here" | Out-File -FilePath "filename.txt" / echo Your content here > filename.txt -  Writing in a file.
+  - echo Your content here > filename.txt / "Your content here" | Out-File -FilePath "filename.txt" / echo Your content here > filename.txt - Writing in a file.
+
     - in mac
 
     ```zsh
@@ -157,7 +173,7 @@
 - cls/Clear-Host/clear – Clear the screen.
 
 - echo – Display a message or turn command echoing on or off. Example:
-echo text / Write-Output text / echo text
+  echo text / Write-Output text / echo text
 
 #### 2.4 Git configuration and aliases
 
@@ -237,6 +253,7 @@ sudo git config --system core.editor "code --wait"
 Here are some commonly used Git configuration options:
 
 1. **User Information**
+
    - Set the name and email address that will be used for your commits.
 
    ```bash
@@ -245,6 +262,7 @@ Here are some commonly used Git configuration options:
    ```
 
 2. **Default Editor**
+
    - Set the default text editor for Git.
 
    ```bash
@@ -252,6 +270,7 @@ Here are some commonly used Git configuration options:
    ```
 
 3. **Line Endings**
+
    - Configure how Git handles line endings between different operating systems.
 
    ```bash
@@ -259,6 +278,7 @@ Here are some commonly used Git configuration options:
    ```
 
 4. **Merge Tool**
+
    - Set the default merge tool for resolving conflicts.
 
    ```bash
@@ -266,6 +286,7 @@ Here are some commonly used Git configuration options:
    ```
 
 5. **Diff Tool**
+
    - Set the default diff tool for viewing differences.
 
    ```bash
@@ -273,6 +294,7 @@ Here are some commonly used Git configuration options:
    ```
 
 6. **Aliases**
+
    - Create shortcuts for commonly used Git commands.
 
    ```bash
@@ -346,9 +368,11 @@ The command `ssh-keygen -t ed25519 -C "your email goes here"` is used to generat
 ###### Breakdown of the Command
 
 1. **`ssh-keygen`**:
+
    - This is the command-line tool used to generate, manage, and convert authentication keys for SSH.
 
 2. **`-t ed25519`**:
+
    - The `-t` option specifies the type of key to create.
    - `ed25519` refers to the Ed25519 algorithm, which is a modern and secure elliptic-curve algorithm for SSH keys. It is known for its high security, performance, and small key size compared to older algorithms like RSA.
 
@@ -359,10 +383,12 @@ The command `ssh-keygen -t ed25519 -C "your email goes here"` is used to generat
 ###### What Happens When You Run the Command
 
 1. **Prompt for a File Location**:
+
    - After running the command, you will be prompted to specify a file to save the key. By default, it will suggest a location such as `~/.ssh/id_ed25519`.
    - If you press Enter without specifying a location, it will use the default path.
 
 2. **Prompt for a Passphrase**:
+
    - You will be asked to enter a passphrase. This is an optional step, but adding a passphrase provides an additional layer of security. If you choose to set a passphrase, you’ll need to enter it whenever you use the private key.
    - If you do not want to set a passphrase, you can press Enter without typing anything.
 
@@ -400,6 +426,7 @@ The key's randomart image is:
 ###### Using the Generated SSH Key
 
 1. **Add the Public Key to the Remote Server**:
+
    - Copy the contents of the public key file (e.g., `~/.ssh/id_ed25519.pub`) to the `~/.ssh/authorized_keys` file on the remote server you want to access.
    - You can use the `ssh-copy-id` command for this:
 
@@ -408,6 +435,7 @@ The key's randomart image is:
      ```
 
 2. **Connect Using SSH**:
+
    - Use the SSH command to connect to the remote server. SSH will use your private key for authentication.
 
      ```sh
@@ -496,13 +524,10 @@ Making effective commits is essential for maintaining a clean, understandable pr
 - **Body** (optional): A detailed explanation of the changes, if necessary (72 characters per line).
 - **Use the Imperative Mood in Commit Messages**: Prefix your commit messages with imperative commands such as: fix, refactor, add, and remove. Write commit messages as if you are giving an order. For example, use "Add feature" instead of "Added feature".
 
-- `git commit -m "Add user login feature" -m " - Implement login endpoint" -m " - Validate user credentials" -m " - Return JWT token on successful login"`
-      - -m "Add user login feature": This is your commit message, a concise summary of the changes.
-      - -m " - Implement login endpoint", -m " - Validate user credentials", -m " - Return JWT token on successful login": These are the lines of your detailed description, each prefixed with a dash and a space for proper formatting.
-      - **output**:
+- `git commit -m "Add user login feature" -m " - Implement login endpoint" -m " - Validate user credentials" -m " - Return JWT token on successful login"` - -m "Add user login feature": This is your commit message, a concise summary of the changes. - -m " - Implement login endpoint", -m " - Validate user credentials", -m " - Return JWT token on successful login": These are the lines of your detailed description, each prefixed with a dash and a space for proper formatting. - **output**:
 
       ```txt
-      
+
       Add user login feature
 
       - Implement login endpoint
@@ -523,11 +548,11 @@ Making effective commits is essential for maintaining a clean, understandable pr
 - If your commit relates to an issue or pull request, reference it in the commit message.
 - **Example**:
 
-     ```
-     Fix user login validation bug
+  ```
+  Fix user login validation bug
 
-     Closes #123
-     ```
+  Closes #123
+  ```
 
 ###### 5. **Test Before Committing**
 
@@ -542,9 +567,9 @@ Making effective commits is essential for maintaining a clean, understandable pr
 - For security and authenticity, consider signing your commits using GPG.
 - **Example**:
 
-     ```sh
-     git commit -S -m "Your commit message"
-     ```
+  ```sh
+  git commit -S -m "Your commit message"
+  ```
 
 ##### Example of a Well-Written Commit Message
 
@@ -629,35 +654,35 @@ The `git rm` command is used to remove files from the working directory and the 
 
 1. **Remove a File and Stage the Deletion**:
 
-    ```bash
-    git rm <file>
-    ```
+   ```bash
+   git rm <file>
+   ```
 
-    This command removes the specified file from the working directory and stages the removal for the next commit.
+   This command removes the specified file from the working directory and stages the removal for the next commit.
 
 2. **Remove a File from Only the Staging Area**:
 
-    ```bash
-    git rm --cached <file>
-    ```
+   ```bash
+   git rm --cached <file>
+   ```
 
-    This command removes the specified file from the staging area, but leaves the file in the working directory. This is useful if you want to stop tracking the file but not delete it from your filesystem.
+   This command removes the specified file from the staging area, but leaves the file in the working directory. This is useful if you want to stop tracking the file but not delete it from your filesystem.
 
 3. **Remove a File and Force the Deletion**:
 
-    ```bash
-    git rm -f <file>
-    ```
+   ```bash
+   git rm -f <file>
+   ```
 
-    This command forces the removal of the file from both the working directory and the staging area, even if the file has changes that haven't been committed.
+   This command forces the removal of the file from both the working directory and the staging area, even if the file has changes that haven't been committed.
 
 4. **Remove a Directory Recursively**:
 
-    ```bash
-    git rm -r <directory>
-    ```
+   ```bash
+   git rm -r <directory>
+   ```
 
-    This command removes the specified directory and all of its contents (files and subdirectories) recursively.
+   This command removes the specified directory and all of its contents (files and subdirectories) recursively.
 
 ##### Examples
 
@@ -665,56 +690,56 @@ The `git rm` command is used to remove files from the working directory and the 
 
 1. **Create a File**:
 
-    ```bash
-    echo "Hello World" > hello.txt
-    git add hello.txt
-    git commit -m "Add hello.txt"
-    ```
+   ```bash
+   echo "Hello World" > hello.txt
+   git add hello.txt
+   git commit -m "Add hello.txt"
+   ```
 
 2. **Remove the File**:
 
-    ```bash
-    git rm hello.txt
-    git commit -m "Remove hello.txt"
-    ```
+   ```bash
+   git rm hello.txt
+   git commit -m "Remove hello.txt"
+   ```
 
-    This sequence of commands creates a file, stages and commits it, then removes the file and stages the removal for the next commit.
+   This sequence of commands creates a file, stages and commits it, then removes the file and stages the removal for the next commit.
 
 ###### Example 2: Untrack a File without Deleting It
 
 1. **Create a File**:
 
-    ```bash
-    echo "Temporary data" > temp.txt
-    git add temp.txt
-    git commit -m "Add temp.txt"
-    ```
+   ```bash
+   echo "Temporary data" > temp.txt
+   git add temp.txt
+   git commit -m "Add temp.txt"
+   ```
 
 2. **Stop Tracking the File**:
 
-    ```bash
-    git rm --cached temp.txt
-    git commit -m "Stop tracking temp.txt"
-    ```
+   ```bash
+   git rm --cached temp.txt
+   git commit -m "Stop tracking temp.txt"
+   ```
 
-    This sequence of commands creates a file, stages and commits it, then stops tracking the file in the repository but keeps it in the working directory.
+   This sequence of commands creates a file, stages and commits it, then stops tracking the file in the repository but keeps it in the working directory.
 
 ###### Example 3: Force Remove a Modified File
 
 1. **Modify a File**:
 
-    ```bash
-    echo "New content" >> existing.txt
-    ```
+   ```bash
+   echo "New content" >> existing.txt
+   ```
 
 2. **Force Remove the Modified File**:
 
-    ```bash
-    git rm -f existing.txt
-    git commit -m "Force remove existing.txt"
-    ```
+   ```bash
+   git rm -f existing.txt
+   git commit -m "Force remove existing.txt"
+   ```
 
-    This sequence of commands modifies a file, then forcefully removes it and stages the removal for the next commit, ignoring any uncommitted changes.
+   This sequence of commands modifies a file, then forcefully removes it and stages the removal for the next commit, ignoring any uncommitted changes.
 
 ##### Notes
 
@@ -976,7 +1001,7 @@ Working with remotes is an essential part of collaborating with others in Git. B
 ```
 
 - Unordered List syntax ->
-  
+
   ```txt
    - html
    - css
@@ -987,7 +1012,7 @@ Working with remotes is an essential part of collaborating with others in Git. B
   ```
 
 - Task List
-  
+
   ```txt
      - [x] Task1
      - [x] Task2
@@ -995,7 +1020,7 @@ Working with remotes is an essential part of collaborating with others in Git. B
   ```
 
 - adding link
-  
+
   ```txt
      <!-- automatic link -->
 
@@ -1020,17 +1045,17 @@ Working with remotes is an essential part of collaborating with others in Git. B
   😀 😃 😄 😁 😆 😅 😂 🤣 🥲 ☺️ 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🥸 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁 ☹️ 😣 😖 😫 😩 🥺 😢 😭 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😐 😑 😬 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 🤐 🥴 🤢 🤮 🤧 😷 🤒 🤕 🤑 🤠 😈 👿 👹 👺 🤡 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾
 
   - Gestures and Body Parts
-      👋 🤚 🖐 ✋ 🖖 👌 🤌 🤏 ✌️ 🤞 🤟 🤘 🤙 👈 👉 👆 🖕 👇 ☝️ 👍 👎 ✊ 👊 🤛 🤜 👏 🙌 👐 🤲 🤝 🙏 ✍️ 💅 🤳 💪 🦾 🦵 🦿 🦶      👣 👂 🦻 👃 🫀 🫁 🧠 🦷 🦴 👀 👁 👅 👄 💋 🩸
+    👋 🤚 🖐 ✋ 🖖 👌 🤌 🤏 ✌️ 🤞 🤟 🤘 🤙 👈 👉 👆 🖕 👇 ☝️ 👍 👎 ✊ 👊 🤛 🤜 👏 🙌 👐 🤲 🤝 🙏 ✍️ 💅 🤳 💪 🦾 🦵 🦿 🦶 👣 👂 🦻 👃 🫀 🫁 🧠 🦷 🦴 👀 👁 👅 👄 💋 🩸
 
 - adding table
 
- ```txt
-     table syntax
-     | heading1 | heading2 |
-     | ----- | ----- |
-     | data1 | data2 |
-     | data3 | data4 |
-     | data5 | data6 |
+```txt
+    table syntax
+    | heading1 | heading2 |
+    | ----- | ----- |
+    | data1 | data2 |
+    | data3 | data4 |
+    | data5 | data6 |
 ```
 
 #### [4.6 GitHub Issues => create video](https://youtu.be/E5HFlpx7QP4)
@@ -1052,30 +1077,38 @@ Each issue serves as a discussion thread where collaborators can comment, provid
 ##### Key Features
 
 1. **Creating Issues**
+
    - Users can create an issue by clicking on the "Issues" tab in a repository and then selecting "New issue."
    - Each issue requires a title and description. The description can include text, markdown, images, and code snippets.
 
 2. **Labels**
+
    - Labels are used to categorize issues. For example, labels can indicate the type of issue (bug, enhancement, question) or its priority.
    - Custom labels can be created to suit the project's needs.
 
 3. **Assignees**
+
    - Issues can be assigned to one or more collaborators who are responsible for resolving the issue.
 
 4. **Milestones**
+
    - Milestones group issues into larger goals or releases. This helps in tracking progress toward significant project objectives.
 
 5. **Projects**
+
    - GitHub Projects is a feature that allows users to organize issues into boards, similar to Kanban boards, for better project management.
 
 6. **Comments and Mentions**
+
    - Collaborators can comment on issues to provide updates, feedback, or solutions.
    - Users can mention others using `@username` to draw their attention to specific comments or issues.
 
 7. **References and Links**
+
    - Issues can be cross-referenced with other issues, pull requests, and commits using their respective IDs (e.g., `#123` for issue 123).
 
 8. **Closing Issues**
+
    - Issues can be closed manually by maintainers or automatically when a related pull request is merged using keywords like "fixes #123" in commit messages.
 
 9. **Templates**
@@ -1084,21 +1117,26 @@ Each issue serves as a discussion thread where collaborators can comment, provid
 ##### Workflow
 
 1. **Opening an Issue**
+
    - A user opens an issue describing a bug, feature request, or task.
    - Labels and milestones can be assigned at this stage.
 
 2. **Discussion**
+
    - Collaborators discuss the issue in the comments, providing insights, feedback, and potential solutions.
    - The issue can be updated based on the discussion.
 
 3. **Assigning and Prioritizing**
+
    - The issue is assigned to one or more developers.
    - The priority is set using labels or by placing the issue within a milestone.
 
 4. **Working on the Issue**
+
    - Developers work on the issue, often linking commits and pull requests to the issue for tracking progress.
 
 5. **Closing the Issue**
+
    - Once the issue is resolved, it is closed manually or automatically via a merged pull request.
 
 6. **Reviewing Closed Issues**
@@ -1666,66 +1704,66 @@ git rebase main
 
 1. **Create Feature Branch**:
 
-    ```bash
-    git checkout -b feature
-    ```
+   ```bash
+   git checkout -b feature
+   ```
 
 2. **Work on Feature**:
 
-    ```bash
-    git add .
-    git commit -m "Work on feature"
-    ```
+   ```bash
+   git add .
+   git commit -m "Work on feature"
+   ```
 
 3. **Merge Main into Feature**:
 
-    ```bash
-    git checkout main
-    git pull
-    git checkout feature
-    git merge main
-    ```
+   ```bash
+   git checkout main
+   git pull
+   git checkout feature
+   git merge main
+   ```
 
 **Using Rebase**:
 
 1. **Create Feature Branch**:
 
-    ```bash
-    git checkout -b feature
-    ```
+   ```bash
+   git checkout -b feature
+   ```
 
 2. **Work on Feature**:
 
-    ```bash
-    git add .
-    git commit -m "Work on feature"
-    ```
+   ```bash
+   git add .
+   git commit -m "Work on feature"
+   ```
 
 3. **Rebase Feature onto Main
-**Using Rebase (continued)**:
+   **Using Rebase (continued)\*\*:
 
-3. **Rebase Feature onto Main**:
+4. **Rebase Feature onto Main**:
 
-    ```bash
-    git checkout main
-    git pull
-    git checkout feature
-    git rebase main
-    ```
+   ```bash
+   git checkout main
+   git pull
+   git checkout feature
+   git rebase main
+   ```
 
    During the rebase process, if there are conflicts, Git will pause and allow you to resolve them. After resolving the conflicts, you would continue the rebase:
 
-    ```bash
-    git add <resolved_files>
-    git rebase --continue
-    ```
+   ```bash
+   git add <resolved_files>
+   git rebase --continue
+   ```
 
-4. **Complete Rebase and Push Changes**:
-    Once the rebase is complete and all conflicts are resolved, you can push your rebased feature branch:
+5. **Complete Rebase and Push Changes**:
+   Once the rebase is complete and all conflicts are resolved, you can push your rebased feature branch:
 
-    ```bash
-    git push -f origin feature
-    ```
+   ```bash
+   git push -f origin feature
+   ```
 
    **Note**: The `-f` (force) option is required because rebase rewrites commit history, and Git will reject the push to prevent potential overwrites unless you force it.
 
@@ -1737,21 +1775,21 @@ Consider the following scenario where `main` has a linear commit history, and `f
 
 1. Start with two branches:
 
-    ```bash
-    git checkout -b main
-    # Make some commits on main
-    git checkout -b feature
-    # Make some commits on feature
-    ```
+   ```bash
+   git checkout -b main
+   # Make some commits on main
+   git checkout -b feature
+   # Make some commits on feature
+   ```
 
 2. Merge `main` into `feature`:
 
-    ```bash
-    git checkout main
-    git pull
-    git checkout feature
-    git merge main
-    ```
+   ```bash
+   git checkout main
+   git pull
+   git checkout feature
+   git merge main
+   ```
 
    Resulting history:
 
@@ -1770,21 +1808,21 @@ Consider the following scenario where `main` has a linear commit history, and `f
 
 1. Start with the same two branches:
 
-    ```bash
-    git checkout -b main
-    # Make some commits on main
-    git checkout -b feature
-    # Make some commits on feature
-    ```
+   ```bash
+   git checkout -b main
+   # Make some commits on main
+   git checkout -b feature
+   # Make some commits on feature
+   ```
 
 2. Rebase `feature` onto `main`:
 
-    ```bash
-    git checkout main
-    git pull
-    git checkout feature
-    git rebase main
-    ```
+   ```bash
+   git checkout main
+   git pull
+   git checkout feature
+   git rebase main
+   ```
 
    Resulting history:
 
@@ -1822,75 +1860,75 @@ When you run `git stash`, Git takes your uncommitted changes (both staged and un
 
 1. **Save Changes to Stash**:
 
-    ```bash
-    git stash
-    ```
+   ```bash
+   git stash
+   ```
 
-    This command stashes both tracked (staged and unstaged) changes.
+   This command stashes both tracked (staged and unstaged) changes.
 
 2. **Apply Stashed Changes**:
 
-    ```bash
-    git stash apply
-    ```
+   ```bash
+   git stash apply
+   ```
 
-    This command reapplies the most recently stashed changes but keeps them in the stash.
+   This command reapplies the most recently stashed changes but keeps them in the stash.
 
 3. **Apply and Remove Stashed Changes**:
 
-    ```bash
-    git stash pop
-    ```
+   ```bash
+   git stash pop
+   ```
 
-    This command reapplies the most recently stashed changes and removes them from the stash.
+   This command reapplies the most recently stashed changes and removes them from the stash.
 
 4. **List Stashed Changes**:
 
-    ```bash
-    git stash list
-    ```
+   ```bash
+   git stash list
+   ```
 
-    This command shows a list of all stashed changes.
+   This command shows a list of all stashed changes.
 
 5. **Show Stashed Changes**:
 
-    ```bash
-    git stash show
-    ```
+   ```bash
+   git stash show
+   ```
 
-    This command shows a summary of changes in the most recent stash.
+   This command shows a summary of changes in the most recent stash.
 
 6. **Show Detailed Stashed Changes**:
 
-    ```bash
-    git stash show -p
-    ```
+   ```bash
+   git stash show -p
+   ```
 
-    This command shows a detailed diff of changes in the most recent stash.
+   This command shows a detailed diff of changes in the most recent stash.
 
 7. **Stash Changes with a Message**:
 
-    ```bash
-    git stash save "message"
-    ```
+   ```bash
+   git stash save "message"
+   ```
 
-    This command allows you to stash changes with a custom message.
+   This command allows you to stash changes with a custom message.
 
 8. **Apply a Specific Stash**:
 
-    ```bash
-    git stash apply stash@{2}
-    ```
+   ```bash
+   git stash apply stash@{2}
+   ```
 
-    This command applies the changes from a specific stash.
+   This command applies the changes from a specific stash.
 
 9. **Drop a Specific Stash**:
 
-    ```bash
-    git stash drop stash@{2}
-    ```
+   ```bash
+   git stash drop stash@{2}
+   ```
 
-    This command deletes a specific stash.
+   This command deletes a specific stash.
 
 10. **Clear All Stashes**:
 
@@ -1906,68 +1944,69 @@ When you run `git stash`, Git takes your uncommitted changes (both staged and un
 
 1. **Make Changes in Your Working Directory**:
 
-    ```bash
-    echo "Some changes" >> file.txt
-    git add file.txt
-    ```
+   ```bash
+   echo "Some changes" >> file.txt
+   git add file.txt
+   ```
 
 2. **Stash the Changes**:
 
-    ```bash
-    git stash
-    ```
+   ```bash
+   git stash
+   ```
 
-    Output:
+   Output:
 
-    ```
-    Saved working directory and index state WIP on main: 1234567 Initial commit
-    ```
+   ```
+   Saved working directory and index state WIP on main: 1234567 Initial commit
+   ```
 
 3. **Verify the Stash**:
 
-    ```bash
-    git stash list
-    ```
+   ```bash
+   git stash list
+   ```
 
-    Output:
+   Output:
 
-    ```
-    stash@{0}: WIP on main: 1234567 Initial commit
-    ```
+   ```
+   stash@{0}: WIP on main: 1234567 Initial commit
+   ```
 
 4. **Switch to Another Branch**:
 
-    ```bash
-    git checkout other-branch
-    ```
+   ```bash
+   git checkout other-branch
+   ```
 
 5. **Make Changes and Commit on the Other Branch**:
 
-    ```bash
-    echo "Work on other branch" >> other-file.txt
-    git add other-file.txt
-    git commit -m "Work on other branch"
-    ```
+   ```bash
+   echo "Work on other branch" >> other-file.txt
+   git add other-file.txt
+   git commit -m "Work on other branch"
+   ```
 
 6. **Switch Back to the Original Branch**:
 
-    ```bash
-    git checkout main
-    ```
+   ```bash
+   git checkout main
+   ```
 
 7. **Reapply Stashed Changes**:
 
-    ```bash
-    git stash pop
-    ```
+   ```bash
+   git stash pop
+   ```
 
-    Output:
+   Output:
 
-    ```
-    Auto-merging file.txt
-    Dropped refs/stash@{
+   ```
+   Auto-merging file.txt
+   Dropped refs/stash@{
+   ```
 
-- 
+-
 
 #### 3.2 Git Tags
 
@@ -2132,35 +2171,37 @@ You can squash commits using the interactive rebase feature in Git.
 
 1. **Start Interactive Rebase**:
 
-    ```bash
-    git rebase -i HEAD~3
-    ```
+   ```bash
+   git rebase -i HEAD~3
+   ```
 
-    This command will open an editor with a list of the last 3 commits.
+   This command will open an editor with a list of the last 3 commits.
 
 2. **Mark Commits to be Squashed**:
-    - In the editor, you'll see something like this:
 
-        ```
-        pick abcdef1 Commit message 1
-        pick abcdef2 Commit message 2
-        pick abcdef3 Commit message 3
-        ```
+   - In the editor, you'll see something like this:
 
-    - Change `pick` to `squash` (or `s`) for the commits you want to squash:
+     ```
+     pick abcdef1 Commit message 1
+     pick abcdef2 Commit message 2
+     pick abcdef3 Commit message 3
+     ```
 
-        ```
-        pick abcdef1 Commit message 1
-        squash abcdef2 Commit message 2
-        squash abcdef3 Commit message 3
-        ```
+   - Change `pick` to `squash` (or `s`) for the commits you want to squash:
+
+     ```
+     pick abcdef1 Commit message 1
+     squash abcdef2 Commit message 2
+     squash abcdef3 Commit message 3
+     ```
 
 3. **Save and Exit the Editor**:
-    - After marking the commits, save and close the editor. Git will then combine the commits.
+
+   - After marking the commits, save and close the editor. Git will then combine the commits.
 
 4. **Edit Commit Message**:
-    - Another editor window will appear, allowing you to edit the commit message for the squashed commit. You can combine the commit messages or create a new one.
-    - Save and close the editor to complete the rebase.
+   - Another editor window will appear, allowing you to edit the commit message for the squashed commit. You can combine the commit messages or create a new one.
+   - Save and close the editor to complete the rebase.
 
 Git squash is a powerful technique to streamline commit history, making it easier to review and understand. By using interactive rebase, you can squash multiple commits into one, ensuring your project history remains clean and meaningful.
 
