@@ -64,6 +64,14 @@
 
 ## Beginner Part
 
+##### Version Control Systems
+
+- Github .
+- Gitlab .
+- Beanstalk .
+- Perforce .
+- BitBucket .
+
 ### [1. Introduction to Git and GitHub](https://youtu.be/ulTs4vqOzyo)
 
 #### 1.1 Why do we need Git?
@@ -88,17 +96,6 @@
 - It provides Command Line Interface (CLI)
 - Released in April 7, 2005
 - Developed by Linus Torvalds & Junio C Hamano
-
-```html
-<h3>Version Control Systems</h3>
-<p>Version Control System Options:</p>
-<ol>
-  <li>GitLab</li>
-  <li>Beanstalk</li>
-  <li>Perforce</li>
-  <li>BitBucket</li>
-</ol>
-```
 
 ##### Github
 
