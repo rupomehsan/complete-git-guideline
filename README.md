@@ -97,7 +97,7 @@
 - Released in April 7, 2005
 - Developed by Linus Torvalds & Junio C Hamano
 
-  ![github](./images/git-github-dff)
+  ![github](./images/git-github-dff.png)
 
 ##### Github
 
